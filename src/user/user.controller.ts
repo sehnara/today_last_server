@@ -11,9 +11,9 @@ export class UserController {
         return this.userService.users();
     }
 
-    @Get("delete/:id")
+    @Get(":id")
     async user(@Param("id") id:number):Promise<User>{
-        return this.userService.deleteUser({
+        return this.userService.user({
            id : Number(id)
         })
     }
@@ -36,7 +36,7 @@ export class UserController {
         return this.userService.deleteUser({id:Number(id)})
     }
 
-    @Put(':id')
+    @Put('update/:id')
     async updateUser(
         @Param("id") id:number, 
         @Body() userData : {
