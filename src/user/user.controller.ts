@@ -11,9 +11,9 @@ export class UserController {
         return this.userService.users();
     }
 
-    @Get(":id")
+    @Get("delete/:id")
     async user(@Param("id") id:number):Promise<User>{
-        return this.userService.user({
+        return this.userService.deleteUser({
            id : Number(id)
         })
     }

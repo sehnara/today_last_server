@@ -23,7 +23,7 @@ let UserController = class UserController {
         return this.userService.users();
     }
     async user(id) {
-        return this.userService.user({
+        return this.userService.deleteUser({
             id: Number(id)
         });
     }
@@ -51,7 +51,7 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], UserController.prototype, "users", null);
 __decorate([
-    (0, common_1.Get)(":id"),
+    (0, common_1.Get)("delete/:id"),
     __param(0, (0, common_1.Param)("id")),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Number]),
